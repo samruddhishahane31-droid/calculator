@@ -1,2 +1,21 @@
-# calculator
-This project is a lightweight and user-friendly calculator built to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. It is designed with a clean interface and responsive functionality, making it suitable for beginners learning programming and web development.  
+let display = document.getElementById("display");
+
+function append(value) {
+    display.value += value;
+}
+
+function clearDisplay() {
+    display.value = "";
+}
+
+function deleteLast() {
+    display.value = display.value.slice(0, -1);
+}
+
+function calculate() {
+    try {
+        display.value = eval(display.value);
+    } catch {
+        display.value = "Error";
+    }
+}
